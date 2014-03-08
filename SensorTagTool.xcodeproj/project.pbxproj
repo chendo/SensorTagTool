@@ -10,6 +10,8 @@
 		588AA3F618CB178600EF419E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 588AA3F518CB178600EF419E /* Foundation.framework */; };
 		588AA3F918CB178600EF419E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 588AA3F818CB178600EF419E /* main.m */; };
 		588AA3FD18CB178600EF419E /* SensorTagTool.1 in CopyFiles */ = {isa = PBXBuildFile; fileRef = 588AA3FC18CB178600EF419E /* SensorTagTool.1 */; };
+		58A2421E18CB23700032D69B /* SensorTagTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 58A2421D18CB23700032D69B /* SensorTagTool.m */; };
+		58F9C02218CB2CBB00D8D688 /* IOBluetooth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 58F9C02118CB2CBB00D8D688 /* IOBluetooth.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -26,11 +28,14 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		588AA3F218CB178600EF419E /* SensorTagTool */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = SensorTagTool; sourceTree = BUILT_PRODUCTS_DIR; };
+		588AA3F218CB178600EF419E /* sensor-tag-tool */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "sensor-tag-tool"; sourceTree = BUILT_PRODUCTS_DIR; };
 		588AA3F518CB178600EF419E /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		588AA3F818CB178600EF419E /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		588AA3FB18CB178600EF419E /* SensorTagTool-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SensorTagTool-Prefix.pch"; sourceTree = "<group>"; };
 		588AA3FC18CB178600EF419E /* SensorTagTool.1 */ = {isa = PBXFileReference; lastKnownFileType = text.man; path = SensorTagTool.1; sourceTree = "<group>"; };
+		58A2421C18CB23700032D69B /* SensorTagTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SensorTagTool.h; sourceTree = "<group>"; };
+		58A2421D18CB23700032D69B /* SensorTagTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SensorTagTool.m; sourceTree = "<group>"; };
+		58F9C02118CB2CBB00D8D688 /* IOBluetooth.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IOBluetooth.framework; path = System/Library/Frameworks/IOBluetooth.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -38,6 +43,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				58F9C02218CB2CBB00D8D688 /* IOBluetooth.framework in Frameworks */,
 				588AA3F618CB178600EF419E /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -57,7 +63,7 @@
 		588AA3F318CB178600EF419E /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				588AA3F218CB178600EF419E /* SensorTagTool */,
+				588AA3F218CB178600EF419E /* sensor-tag-tool */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -65,6 +71,7 @@
 		588AA3F418CB178600EF419E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				58F9C02118CB2CBB00D8D688 /* IOBluetooth.framework */,
 				588AA3F518CB178600EF419E /* Foundation.framework */,
 			);
 			name = Frameworks;
@@ -76,6 +83,8 @@
 				588AA3F818CB178600EF419E /* main.m */,
 				588AA3FC18CB178600EF419E /* SensorTagTool.1 */,
 				588AA3FA18CB178600EF419E /* Supporting Files */,
+				58A2421C18CB23700032D69B /* SensorTagTool.h */,
+				58A2421D18CB23700032D69B /* SensorTagTool.m */,
 			);
 			path = SensorTagTool;
 			sourceTree = "<group>";
@@ -105,7 +114,7 @@
 			);
 			name = SensorTagTool;
 			productName = SensorTagTool;
-			productReference = 588AA3F218CB178600EF419E /* SensorTagTool */;
+			productReference = 588AA3F218CB178600EF419E /* sensor-tag-tool */;
 			productType = "com.apple.product-type.tool";
 		};
 /* End PBXNativeTarget section */
@@ -139,6 +148,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				58A2421E18CB23700032D69B /* SensorTagTool.m in Sources */,
 				588AA3F918CB178600EF419E /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -219,7 +229,7 @@
 			buildSettings = {
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "SensorTagTool/SensorTagTool-Prefix.pch";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "sensor-tag-tool";
 			};
 			name = Debug;
 		};
@@ -228,7 +238,7 @@
 			buildSettings = {
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "SensorTagTool/SensorTagTool-Prefix.pch";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "sensor-tag-tool";
 			};
 			name = Release;
 		};
@@ -251,6 +261,7 @@
 				588AA40218CB178600EF419E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

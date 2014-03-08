@@ -6,15 +6,16 @@
 //  Copyright (c) 2014 chendo. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
+#import "SensorTagTool.h"
 
 int main(int argc, const char * argv[])
 {
 
     @autoreleasepool {
+        SensorTagTool *tool = [[SensorTagTool alloc] init];
+        [tool start];
+        [[NSRunLoop currentRunLoop] run];
         
-        // insert code here...
-        NSLog(@"Hello, World!");
         
     }
     return 0;
