@@ -82,23 +82,32 @@
 {
     char value;
     [characteristic.value getBytes:&value length:1];
+    
+    NSMutableDictionary *output = [NSMutableDictionary dictionary];
+    output[@"uuid"] = [peripheral.identifier UUIDString];
+    
     if (value & 0x1 && !(self.lastValue & 0x1)) {
-        printf("right down\n");
-        
+        output[@"button"] = @"right";
+        output[@"event"] = @"down";
     }
     
     if (!(value & 0x1) && (self.lastValue & 0x1)) {
-        printf("right up\n");
+        output[@"button"] = @"right";
+        output[@"event"] = @"up";
     }
     
     if (value & 0x2 && !(self.lastValue & 0x2)) {
-        printf("left down\n");
+        output[@"button"] = @"left";
+        output[@"event"] = @"down";
     }
 
     if (!(value & 0x2) && (self.lastValue & 0x2)) {
-        printf("left up\n");
+        output[@"button"] = @"left";
+        output[@"event"] = @"up";
     }
 
+    NSData *data = [NSJSONSerialization dataWithJSONObject:output options:0 error:nil];
+    printf("%s\n", [[[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding] cStringUsingEncoding:NSUTF8StringEncoding]);
     self.lastValue = value;
     
 }
